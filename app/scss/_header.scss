@@ -1,0 +1,134 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: $black;
+  padding: 3rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  .icons {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: $white;
+
+    &:hover {
+      color: $yellow;
+    }
+  }
+
+  #menu-btn {
+    display: none;
+  }
+
+  .navbar {
+    a {
+      color: $white;
+      font-size: 2rem;
+      margin: 0 2rem;
+
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 1rem;
+        color: $yellow;
+      }
+    }
+
+    .space {
+      display: inline-block;
+      width: 16rem;
+    }
+  }
+
+  .logo {
+    position: absolute;
+    top: 3rem;
+    left: 48.5%;
+    transform: translateX(-50%);
+
+    img {
+      width: 15rem;
+    }
+  }
+
+  .search-form {
+    height: 7rem;
+    padding: 0 2rem;
+    border-top: $border;
+    display: flex;
+    align-items: center;
+    background: $black;
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+    &.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    input {
+      width: 100%;
+      background: none;
+      text-transform: none;
+      font-size: 1.6rem;
+      color: $white;
+    }
+  }
+
+  .fa-times {
+    transform: rotate(180deg);
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    justify-content: flex-end;
+    gap: 2rem;
+
+    .logo {
+      transform: translateX(0);
+      left: 3rem;
+    }
+
+    #menu-btn {
+      display: inline-block;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 99%;
+      left: 0;
+      right: 0;
+      background: $black;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+      &.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      a {
+        display: block;
+        margin: 3rem 2rem;
+      }
+
+      .space {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+}
